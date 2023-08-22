@@ -1,0 +1,16 @@
+version: '3.8'
+networks:
+  mask-net:
+    external: true
+
+services:
+  node_fr:
+    build: .
+    container_name: node_fr
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - mask-net
+    ports:
+      - 3050:3050
